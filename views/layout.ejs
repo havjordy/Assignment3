@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Jordy Sport Tracker</title> <!-- Added space before 'Jordy Sport Tracker' -->
+    <!-- Link to Bootstrap CSS (from node_modules) -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Link to Font Awesome CSS (from node_modules) -->
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Adjusted to point to the CSS in the public folder -->
+</head>
+<body>
+    <!-- the header -->
+    <header class="page-header">
+    <div class="header-image left">
+        <img src="/images/logo.jpg" alt="Left Logo">
+    </div>
+    <% if (title !== 'Home') { %>
+    <nav>
+        <ul>
+            <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="/workouts/add"><i class="fa-solid fa-square-plus"></i> Add Workout</a></li>
+            <li><a href="/workouts"><i class="fa-solid fa-list"></i> Workouts List</a></li>
+        </ul>
+    </nav>
+    <div class="header-image right">
+        <img src="/images/logo.jpg" alt="Right Logo">
+    </div>
+
+    
+    <% } %>
+</header>
+
+<!-- the footer-->
+    <!--footer-->
+    <footer>
+        <p>Contact: jordy.havyarimana@ontariotechu.net      &copy; 2024 Jordy Alec Havyarimana</p>
+    </footer>
+
+    <!--for the scrollong part-->
+    <script>
+    window.addEventListener('scroll', function() {
+        const footer = document.querySelector('footer');
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (scrollPosition > windowHeight) {
+            footer.style.bottom = '0';
+        } else {
+            footer.style.bottom = '-100px';
+        }
+    });
+</script>
+</body>
+</html>

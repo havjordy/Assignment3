@@ -1,0 +1,50 @@
+<!-- Page to view the inputted workout-->
+<%- include('layout') %>
+<main>
+    <h2><i class="fa-solid fa-heart-pulse"></i> Your Workouts</h2>
+    
+    <!-- Workout List Table -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                <!--calling what's gonna be on the page-->
+                    <th>Workout Day</th>
+                    <th>Calories (kcal)</th>
+                    <th>Distance (km)</th>
+                    <th>BPM</th>
+                    <th>Objective Met</th>
+                    <th>Actions</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <% workouts.forEach(workout => { %>
+                    <tr>
+                        <!-- Format and display the workout date -->
+                        <td><%= new Date(workout.workoutDate).toLocaleDateString() %></td> <!-- Format and display the date -->
+                        <td><%= workout.calories %> kcal</td>
+                        <td><%= workout.distance %> km</td>
+                        <td><%= workout.bpm %> bpm</td>
+                        <td><label for="objectiveMet">Objective Met:</label></td>
+                        <td>
+                            <% if (workout.objectiveMet) { %>
+                                <i class="fa-solid fa-check-circle" style="color: green;"></i> <i class="fa-solid fa-trophy"></i>
+                            <% } else { %>
+                                <i class="fa-solid fa-times-circle" style="color: red;"></i> <i class="fa-solid fa-medal"></i>
+                            <% } %>
+                        </td>
+                        <td class="action-buttons">
+                            <a href="/workouts/edit/<%= workout._id %>">
+                                <button>Edit</button>
+                            </a>
+
+                            <a href="/workouts/delete/<%= workout._id %>">
+                                <button>Delete</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</main>

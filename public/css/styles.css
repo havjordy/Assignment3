@@ -1,0 +1,423 @@
+/* General Layout */
+body {
+    background-color: white; 
+    font-family: 'Arial', sans-serif;
+    color: #286e53; 
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*might not work so i did the style as nav (check nav) */
+head {
+    background-color: #7f9e92;
+}
+
+footer {
+    background: linear-gradient(90deg, #6bd1b3, #3d947e); 
+    color: #faf6ea; 
+    font-weight: bold; 
+    text-align: center;
+    padding: 1px;
+    width: 100%;
+    z-index: 10;
+}
+
+/*might not work so i did the style as nav (check nav) */
+header {
+    background-color: #7f9e92;
+    top: 0;
+}
+
+
+footer {
+    font-size: 0.9em;
+    margin-top: auto; 
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 1000;
+    
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0px; 
+    padding: 10px;
+}
+
+
+main img {
+    width: 250px;
+    height: auto; 
+    border-radius: 20%; 
+    box-shadow: 0 10px 10px rgba(0, 0, 20, 20);
+    margin-bottom: 20px; 
+}
+
+
+main h1 {
+    font-size: 2em; 
+    color: #001f3d; 
+    font-weight: bold;
+    margin: 10px 0;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+
+main p {
+    font-size: 1.2em; 
+    color: #0c0531; 
+    max-width: 600px; 
+    line-height: 1.6; 
+    margin: 10px auto;
+}
+
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(90deg, #6bd1b3, #3d947e); 
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; 
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif; 
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f4b400; 
+    color: #001f3d; 
+    border-radius: 5px;
+    transform: translateY(-3);
+}
+.header-image {
+    position: absolute;
+    top: 10px;
+}
+
+.header-image.left {
+    left: 10px;
+}
+
+.header-image.right {
+    right: 10px;
+}
+
+.header-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px; 
+}
+
+
+/* Buttons */
+button, .btn {
+    background-color: #19533d; 
+    color: rgb(181, 231, 231); 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #f4b400; 
+    color: #001f3d; 
+    transform: translateY(-3);
+}
+
+/* Splash Screen */
+.splash-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.splash-image {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    border-radius: 10px;
+}
+/* Logo Styling, I added the logo as an image because it was easier */
+.img {
+    width: 150px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    padding: 10px; 
+    border: 3px solid #F4B400; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+h1 {
+    font-size: 3em;
+    color: #001f3d; 
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555; 
+}
+
+/* Forms and Inputs */
+form {
+    max-width: 600px;
+    margin: 120px auto;
+    padding: 20px;
+    border: 10px solid #136853; 
+    border-radius: 10px;
+    background-color: #99cfcf; 
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #edf0f3; 
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+    color: #2d2d2e; 
+    margin-bottom: 10px;
+}
+
+/* Root variables to make easier to change colors */
+:root {
+    --form-bg-color: #f2f7f4;
+    --form-text-color: #0f0f0f;
+    --form-border-radius: 10px;
+
+    --heading-color: #0c0c0c;
+
+    --table-header-bg-color: #19533d;
+    --table-header-text-color: #6cdba3;
+    --table-row-bg-color-even: #192e1b;
+    --table-row-bg-color-odd: #f9fbe7;
+    --table-text-color: #333;
+
+    --input-bg-color: #ffffff;
+    --input-border-color: #ccc;
+    --input-text-color: #333;
+
+    --button-bg-color: #19533d;
+    --button-hover-bg-color: #6cdba3;
+    --button-text-color: #0c0b0b;
+}
+
+/* General styles for the form */
+.edit-workout-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--form-bg-color);
+    border-radius: var(--form-border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--form-text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Styling the form heading */
+.edit-workout-form h2 {
+    text-align: center;
+    color: var(--heading-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.add-workout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.add-workout-table th {
+    background-color: var(--table-header-bg-color);
+    color: var(--table-header-text-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.add-workout-table td {
+    padding: 10px;
+    vertical-align: middle;
+    color: var(--table-text-color);
+}
+
+.add-workout-table tr:nth-child(even) {
+    background-color: var(--table-row-bg-color-even);
+}
+
+.add-workout-table tr:nth-child(odd) {
+    background-color: var(--table-row-bg-color-odd);
+}
+
+/* Label and input styling */
+.add-workout-table label {
+    font-weight: bold;
+    color: var(--table-text-color);
+}
+
+.add-workout-table input,
+.add-workout-table select {
+    width: 95%;
+    padding: 8px;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    color: var(--input-text-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.action-buttons button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(#19533d);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .edit-workout-form {
+        padding: 10px;
+    }
+
+    .add-workout-table label {
+        font-size: 14px;
+    }
+
+    .add-workout-table input,
+    .add-workout-table select {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Table Container */
+.table-container {
+    width: 90%;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #f4f4f4; 
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
+
+/* Table Header */
+table th {
+    background-color: #1b5043; 
+    color: #a2e0d1; 
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #cebf3d;
+}
+
+/* Table Body */
+table td {
+    background-color: #ffffff; 
+    color: #333333; 
+    padding: 10px 15px;
+    border: 1px solid #ddd; 
+}
+
+/* Table Row Hover Effect */
+table tr:hover {
+    background-color: #F4B400; 
+    color: white; 
+}
+
+/* Action Buttons */
+.action-buttons {
+    text-align: center;
+}
+
+.action-buttons button {
+    background-color: #19533d; 
+    color: rgb(181, 231, 231); 
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 10 10px; 
+}
+
+/* Button Hover Effect */
+.action-buttons button:hover {
+    background-color: #f4b400; 
+    color: #001f3d; 
+    transform: translateY(-3);
+}
+
+

@@ -1,0 +1,39 @@
+<!-- add workout command page-->
+<%- include('layout') %>
+<main class="edit-workout-form">
+    <form action="/workouts/add" method="POST">
+    <h2>Add New Workout</h2>
+    <table class="add-workout-table">
+        <tr>
+            <th>Field</th>
+            <th>Input</th>
+        </tr>
+        <tr>
+            <td><label for="workoutDate">Day of Workout:</label></td>
+            <td><input type="date" id="workoutDate" name="workoutDate" required></td>
+        </tr>
+        <tr>
+            <td><label for="calories">Calories Burned:</label></td>
+            <td><input type="number" id="calories" name="calories" required></td>
+        </tr>
+        <tr>
+            <td><label for="distance">Distance (km):</label></td>
+            <td><input type="number" id="distance" name="distance" step="0.01" required></td>
+        </tr>
+        <tr>
+            <td><label for="bpm">Average BPM:</label></td>
+            <td><input type="number" id="bpm" name="bpm" required></td>
+        </tr>
+        <tr>
+            <td><label for="objectiveMet">Objective Met:</label></td>
+            <td>
+                <select name="objectiveMet" id="objectiveMet">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn">Add Workout</button>
+</form>
+</main>
